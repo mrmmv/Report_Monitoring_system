@@ -29,51 +29,62 @@
     .badge {
       font-size: 1rem;
     }
+    header {
+      text-align: center;
+    }
+    header img {
+      width: 60px;
+      height: 60px;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    header p {
+      font-size: 0.9rem;
+    }
+    @media (min-width: 768px) {
+      header {
+        text-align: left;
+      }
+      header img {
+        width: 80px;
+        height: 80px;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container my-5">
-    <!-- Header with Left Alignment and 3D Design -->
-    <header style="
+    <!-- Header -->
+    <header class="mb-4 p-3" style="
       background: linear-gradient(to right, #ff1493, #ff69b4); 
       color: white; 
-      padding: 20px; 
-      text-align: left; 
       border-radius: 10px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
-      <div style="display: flex; align-items: center;">
-        <img src="src/calapan.jpg" alt="Calapan Logo" style="
-          height: 80px; 
-          margin-right: 20px; 
-          box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3); 
-          border-radius: 50%;">
+      <div class="d-flex flex-column flex-md-row align-items-center">
+        <img src="src/calapan.jpg" alt="Calapan Logo" class="me-md-3 mb-2 mb-md-0 rounded-circle shadow">
         <div>
-          <h1 style="
-            font-size: 2.5rem; 
-            font-weight: bold; 
-            margin: 0;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);">
-            Accomplishment Report Monitoring System
-          </h1>
-          <p style="
-            margin: 0; 
-            font-size: 1.2rem; 
-            font-weight: normal;">
-            Department of Education Division Of Calapan City
-          </p>
+          <h1 class="fw-bold">Accomplishment Report Monitoring System</h1>
+          <p>Department of Education Division Of Calapan City</p>
         </div>
       </div>
     </header>
 
     <!-- Admin Dashboard Title -->
-    <div class="text-center mt-4 mb-4">
+    <div class="text-center mb-4">
       <h1 class="fw-bold text-dark">Admin Dashboard</h1>
       <p class="text-muted">Manage user submissions and monitor activity reports</p>
     </div>
 
     <!-- Weekly Submission Chart -->
     <div class="row g-4">
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
         <div class="card">
           <div class="card-header">
             <h5 class="m-0">Weekly Submission Status</h5>
@@ -85,7 +96,7 @@
       </div>
 
       <!-- Monthly Submission Summary -->
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
         <div class="card">
           <div class="card-header">
             <h5 class="m-0">Monthly Submission Summary</h5>
@@ -105,12 +116,12 @@
 
     <!-- User Submission Records -->
     <div class="row mt-4">
-      <div class="col-md-12">
+      <div class="col-12">
         <div class="card">
           <div class="card-header" style="background: linear-gradient(to right, #ff1493, #ff69b4);">
             <h5 class="m-0 text-white">User Submission Records</h5>
           </div>
-          <div class="card-body">
+          <div class="card-body table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -131,12 +142,12 @@
 
     <!-- Buttons for Admin Actions -->
     <div class="row mt-4">
-      <div class="col-md-6">
+      <div class="col-12 col-md-6 mb-3 mb-md-0">
         <button class="btn btn-primary w-100 py-3" onclick="downloadFiles()">
           <i class="bi bi-download"></i> Download Submitted Files
         </button>
       </div>
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
         <button class="btn btn-success w-100 py-3" onclick="generateMonthlyReport()">
           <i class="bi bi-file-earmark"></i> Generate Monthly Report
         </button>
